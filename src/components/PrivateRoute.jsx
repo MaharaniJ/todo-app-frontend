@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 function PrivateRoutes() {
-  const { auth } = useAuth();
+  const { auth } = useAuth;
 
   if (auth === null) return 'Loading...';
 

@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import env  from '../../config';
 import "./authform.css";
 import axios from 'axios';
+import axiosInstance from '../../config';
 
 const Register = () => {
     const navigate = useNavigate()
@@ -54,7 +55,8 @@ const [inputval, setInputval] = useState({
         } 
          else {
             // console.log("User Registration Successfully")
-            const data = await axios.post(`${env.api}/auth/register`, inputval)
+            const data = await axiosInstance.post('/auth/register', inputval)
+            
             toast.success("Registration Successfully Done 🙂!", {
                 position: "top-center"
             });
